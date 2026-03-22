@@ -1,0 +1,142 @@
+/* Main background (same gradient theme) */
+.main {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #1d2671, #c33764);
+  background-size: 200% 200%;
+  animation: bgMove 6s infinite alternate;
+}
+
+/* Background animation */
+@keyframes bgMove {
+  0% { background-position: left; }
+  100% { background-position: right; }
+}
+
+/* Container */
+.container {
+  width: 80%;
+  max-width: 900px;
+}
+
+/* Heading */
+.heading {
+  text-align: center;
+  color: white;
+  margin-bottom: 20px;
+  font-size: 32px;
+}
+
+/* Notes grid */
+.notesContainer {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+/* Single note card */
+.note {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(12px);
+  padding: 20px;
+  border-radius: 15px;
+  color: white;
+  transition: 0.3s;
+  animation: fadeIn 0.5s ease-in;
+}
+
+/* Hover */
+.note:hover {
+  transform: translateY(-5px) scale(1.03);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+}
+
+/* Fade animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Title */
+.noteTitle {
+  font-size: 20px;
+  margin-bottom: 10px;
+  color: #ffd369;
+}
+
+/* Description */
+.noteDescription {
+  font-size: 14px;
+  margin-bottom: 15px;
+}
+
+/* No notes text */
+.noNotes {
+  text-align: center;
+  color: white;
+  font-size: 18px;
+}
+
+/* Buttons common */
+.deleteButton,
+.editButton {
+  padding: 8px 12px;
+  margin-right: 8px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  color: white;
+  transition: 0.3s;
+}
+
+/* Delete button */
+.deleteButton {
+  background: linear-gradient(135deg, #ff416c, #ff4b2b);
+}
+
+/* Edit button */
+.editButton {
+  background: linear-gradient(135deg, #36d1dc, #5b86e5);
+}
+
+/* Hover effects */
+.deleteButton:hover,
+.editButton:hover {
+  transform: scale(1.05);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+/* Click */
+.deleteButton:active,
+.editButton:active {
+  transform: scale(0.95);
+}
+.createButton {
+  display: block;
+  margin: 30px auto 0;
+  padding: 12px 24px;
+  background: linear-gradient(135deg, #36d1dc, #5b86e5);
+  border: none;
+  border-radius: 8px;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.createButton:hover {
+  transform: scale(1.05);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+.createButton:active {
+  transform: scale(0.95);
+  box-shadow: none;
+}
+
